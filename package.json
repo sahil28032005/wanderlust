@@ -9,9 +9,10 @@
 		"install-frontend": "cd frontend && npm i",
 		"install-backend": "cd backend && npm i",
 		"installer": "npm i && npm run install-backend && npm run install-frontend",
-		"prepare": "husky install && chmod ug+x .husky/*"
+		"prepare": "husky install && node -e \"if (process.platform !== 'win32') require('child_process').execSync('chmod ug+x .husky/*')\""
 	},
 	"devDependencies": {
-		"husky": "^8.0.0"
+		"husky": "^8.0.0",
+		"vite": "^5.3.3"
 	}
 }
